@@ -1,0 +1,31 @@
+.floating-input {
+    position: relative;
+
+}
+
+.floating-input label {
+    background-color: white;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    transition: .3s;
+}
+
+.floating-input.area label {
+    top: 25%;
+}
+
+
+.floating-input input:focus + label,
+.floating-input .select2-container--open + label,
+.floating-input .select2-container--focus + label,
+.floating-input textarea:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input textarea:not(:placeholder-shown) + label,
+.floating-input .floating + label
+{
+    top: 0;
+    transform: translateY(-50%) scale(.9);
+}

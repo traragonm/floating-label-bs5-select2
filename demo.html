@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="assets/css/select2-bootstrap-5-theme.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="assets/scripts.bundle.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+    <div class="">
+        <div class="row">
+            <!-- <div class="col-md-3"></div> -->
+            <div class="col-md-12">
+                <div class="card">
+
+
+
+                    <div class="card-body">
+
+                        <div class="row my-3">
+                            <!--START: row 1 -->
+
+                            <div class="col-md-12 ">
+                                <div class="floating-input">
+                                    <select id="" class="form-select single" value="">
+                                        <option selected></option>
+                                        <option value="-1">select</option>
+                                        <option selected>1</option>
+                                        <option>2</option>
+                                    </select>
+                                    <label>Name</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-3 ">
+                            <!--START: row 1 -->
+
+                            <div class="col-md-6">
+                                <div class="floating-input">
+                                    <input class="form-control" placeholder=" " value="">
+                                    <label>Parent</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="floating-input">
+                                    <input class="form-control" placeholder=" " type="number" value="">
+                                    <label>Display order</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-3">
+                            <!--START: row 1 -->
+
+                            <div class="col-md-12 my-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                    <label class="form-check-label" for="gridCheck1">
+                                        Exteneral link
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 my-1">
+                                <div class="floating-input">
+                                    <input class="form-control" placeholder=" " value="">
+                                    <label>Href</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row my-3">
+                            <!--START: row 1 -->
+
+                            <div class="col-md-6">
+                                <input class="form-control" type="file" id="gridCheck1">
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="floating-input area">
+                                    <textarea id="textarea" class="form-control" placeholder=" ">sdsd</textarea>
+                                    <label>label input</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- <div class="floating-input mb-3">
+                            <select id="select-m" class="form-select multiply" value="" multiple>
+                                <option value="-1">select</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                            <label>label select multiply</label>
+                        </div>
+            
+                        <div class="floating-input area mb-3">
+                            <textarea id="textarea" class="form-control" placeholder=" ">sdsd</textarea>
+                            <label>label input</label>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+
+
+            $('.floating-input .form-select').select2({
+                theme: "bootstrap-5",
+                placeholder: " ",
+                allowClear: true,
+            })
+
+            $(".floating-input .form-select.single").each(function (index) {
+                if ($(this).val() !== "") {
+                    console.log($(this).val());
+                    $(this).closest('.floating-input').find('.select2').addClass('floating')
+                }
+                else {
+                    $(this).closest('.floating-input').find('.select2').removeClass('floating')
+                }
+            });
+
+            $(".floating-input .form-select.multiply").each(function (index) {
+                if ($(this).val().length != 0) {
+                    console.log($(this).val());
+                    $(this).closest('.floating-input').find('.select2').addClass('floating')
+                }
+                else {
+                    $(this).closest('.floating-input').find('.select2').removeClass('floating')
+                }
+            });
+
+            $('.floating-input .form-select.single').on('change.select2', function (e) {
+                // var data = e.params.data;
+                if ($(this).val() !== "") {
+                    console.log($(this).val());
+                    $(this).closest('.floating-input').find('.select2').addClass('floating')
+                }
+                else {
+                    $(this).closest('.floating-input').find('.select2').removeClass('floating')
+                }
+            });
+            $('.floating-input .form-select.multiply').on('change.select2', function (e) {
+                // var data = e.params.data;
+                if ($(this).val().length != 0) {
+                    console.log($(this).val());
+                    $(this).closest('.floating-input').find('.select2').addClass('floating')
+                }
+                else {
+                    $(this).closest('.floating-input').find('.select2').removeClass('floating')
+                }
+            });
+
+
+
+        })
+    </script>
+</body>
+
+</html>
